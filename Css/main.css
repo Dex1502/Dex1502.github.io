@@ -1,0 +1,794 @@
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../Fonts/Lato-Regular.ttf') format('truetype');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../Fonts/Lato-Medium.ttf') format('truetype');
+    font-weight: 400;
+}
+
+body{
+    margin: 0px;
+    font-family: Lato;
+    font-weight: 100;
+}
+
+header{
+    width: 100%;
+    height: 100px;
+    background: #10101DE5;
+    position: fixed;
+}
+
+logo{
+    text-transform: uppercase;
+    color:#fff;
+    font-size: 28px;
+    font-weight: 800;
+    font-family: Raleway;
+}
+
+span{
+    color:#43ABF0;
+}
+
+button{
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 13px 15px;
+    color:#fff;
+    background: #3E9CDC;
+    border: solid 1px #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Lato;
+
+}
+
+button:hover{
+    opacity: 0.7;
+}
+
+h1{
+    color: #000;
+    font-size: 48px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0px;
+    width: 780px;
+}
+
+h2{
+    color:#fff;
+    font-size: 36px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0px;
+    margin-bottom:30px;
+}
+
+h3{
+    margin: 0px;
+    font-size: 20px;
+    color:#000;
+    font-weight: 700;
+}
+
+p{
+    font-size: 20px;
+    font-weight: 400;
+    margin:0px;
+}
+
+.MainContainer{
+    max-width: 1200px;
+    margin: 0px auto;
+    display: flex;
+    height: 100%;/**/
+}
+
+header .MainContainer{
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+}
+
+header ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap:50px;
+}
+
+form{
+    margin: 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+input:not([type="range"]),select{
+    font-size: 18px;
+    padding: 12px;
+    width: 100%;
+    background: #FFFFFFD9;
+    border: #000 1px solid;
+    border-radius: 3px;
+    font-family: 'Lato';
+
+}
+
+
+
+input::placeholder{
+    color:#272733;
+}
+
+header ul a{
+    color:#fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+header ul a:hover{
+    color:#43ABF0
+}
+
+.MainSection{
+    background-image: url(../Images/Main.png);
+    height: 987px;
+    background-position: center;
+}
+
+.MainSection .MainContainer{
+    flex-direction: column;
+    justify-content: center;
+    gap: 100px;
+}
+
+.MainSection p::before{
+    content: "- ";
+}
+
+.MainSection p{
+    margin-left: 10px;
+}
+
+.MainSection-Buttons{
+    display: flex;
+    gap: 30px;
+}
+
+.MainSection-Buttons button{
+    width: 183px;
+}
+
+.MainSection-Buttons button:last-child{
+    background: #fff;
+    border-color: #000;
+    color:#000;
+}
+
+.FormSection{
+    background-image: url(../Images/Form.png);
+    background-color: #272733;
+    height: 900px;
+    background-position: center;
+}
+
+.FormSection .MainContainer{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.FormSection p{
+    color:#BBBBBB;
+    font-size: 18px;
+}
+
+.FormSection-Circles{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 93%;
+    margin: 90px 0px 20px 0px;
+}
+
+.Circle{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    background:#3E9CDC;
+    border:#286690 solid 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CirclesContainer{
+    display: flex;
+    gap:20px;
+}
+
+.Circle_little{
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
+    background: #C4C4C4;
+}
+
+.FormSection-Labels{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 70px;
+}
+
+.FormSection-Labels p{
+    font-size: 16px;
+    color:#fff;
+    width: 209px;
+    text-align: center;
+}
+
+.InputContainer{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+#file{
+    display: none;
+}
+
+form label{
+    background: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    justify-content: center;
+    width: 35%;
+}
+
+form label:hover{
+    opacity: 0.9;
+}
+
+
+.RangeContainer{
+    width: 77%;
+}
+
+.RangeContainer p{
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: 400;
+    color:#fff;
+}
+
+.RangeContainer div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+#procent {
+    width: 100%;
+    -webkit-appearance: none;
+    background-color: #FFFFFFB2;
+    height: 6px;
+    border-radius: 6px;
+  }
+  
+  #procent::-webkit-slider-runnable-track {
+    height: 10px;
+    -webkit-appearance: none;
+    color: #13bba4;
+    margin-top: -1px;
+  }
+  
+  #procent::-webkit-slider-thumb {
+    width: 37px;
+    border-radius: 37px;
+    background: #42A9ED;
+    -webkit-appearance: none;
+    height: 37px;
+    border:3px solid #286690;
+    position: relative;
+    bottom: 13px;
+  }
+
+  #procent::-webkit-slider-thumb:hover{
+    background: rgb(42, 128, 185);
+  }
+
+  form button{
+    width: 370px;
+    height: 48px;
+    margin-top: 30px;
+  }
+
+  footer{
+    height: 80px;
+    background: #3D4050;
+  }
+
+  footer .MainContainer{
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer p{
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  footer span{
+    text-transform: uppercase;
+    font-family: Lato;
+    color:#fff;
+  }
+
+  .Footer-Container{
+    display: flex;
+    gap:50px;
+  }
+
+  .Footer-Container div{
+    display: flex;
+    gap:10px;
+    align-items: center;
+  }
+
+  footer a{
+    color:#fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  .Footer-Border{
+    width: 1px;
+    height: 18px;
+    background: #fff;
+  }
+
+  .FormSection_mobile{
+    display: none;
+  }
+
+  .ReviewSection{
+    background: #1f1f29;
+  }
+
+  .ReviewSection .MainContainer{
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 100px 0px;
+  }
+
+  .ReviewSection-SliderContainer{
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .SliderContainer-Slider{
+    display: flex;
+    gap: 30px;
+    width: min-content;
+  }
+
+  .SliderContainer-Slider > div{
+    width: 380px;
+    background: #dfdfe1;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+
+  .SliderContainer-Slider div p {
+    color: #272733;
+    margin: 10px 0px 30px 0px;
+}
+
+  .ReviewSection-Buttons button{
+    background: none;
+    border:none;
+    padding: 0px;
+  }
+
+  .ReviewSection-Buttons{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+    margin-bottom: 20px;
+  }
+
+  .ReviewSection-Buttons img{
+    width: 80px;
+  }
+
+  .ReviewSection-Pagination{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    gap: 5px;
+    justify-content: end;
+  }
+
+  .ReviewSection-Pagination div{
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: #fff;
+  }
+
+  .Active{
+    background: #3E9CDC !important;
+  }
+
+  .SliderContainer-Slider img{
+    width: 35px;
+}
+
+.StarsContainer{
+    margin-top: 10px;
+}
+
+  @media(max-width:1270px){
+    .MainContainer{
+        max-width: 900px;
+    }
+    
+    .CirclesContainer{
+        gap:13px;
+    }
+
+    .Circle{
+        width: 75px;
+        height: 75px;
+    }
+
+    .SliderContainer-Slider > div {
+        width: 280px;
+    }
+
+
+    .FormSection-Labels p {
+        width: 158px;
+    }
+
+    form label {
+        width: 34%;
+    }
+
+    footer p{
+        font-size: 11px;
+        text-align: center;
+    }
+
+    footer p:first-child{
+        width: 130px;
+    }
+
+    .SliderContainer-Slider div p {
+        font-size: 17px;
+    }
+  }
+
+  @media (max-width:980px){
+
+    .SliderContainer-Slider > div {
+        width: 285px;
+    }
+
+    .SliderContainer-Slider h3{
+        font-size: 23px;
+    }
+
+    .SliderContainer-Slider div p {
+        font-size: 20px;
+    }
+
+    .MainContainer{
+        max-width: 600px;
+    }
+    header ul a{
+        font-size: 16px;
+    }
+
+    header ul {
+        gap: 12px;
+    }
+
+    logo{
+        font-size: 26px;
+    }
+
+    h1{
+        font-size: 55px;
+        width: 400;
+    }
+    
+    h3{
+        font-size: 35px;
+        width: 500px;
+    }
+
+    p{
+        font-size: 25px;
+    }
+
+    button{
+        font-size: 30px;
+    }
+
+    .MainSection-Buttons button {
+        width: 250px;
+    }
+
+    .MainSection .MainContainer {
+        gap: 50px;
+    }
+
+    h2{
+        font-size: 53px;
+    }
+
+    .FormSection p {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .FormSection .MainContainer{
+        height: auto;
+        padding: 100px 0px;
+    }
+
+    .FormSection-Labels{
+        display: none;
+    }
+
+    .FormSection-Circles{
+        display: none;
+    }
+
+    .FormSection_mobile{
+        display: block;
+        margin: 50px 0px 60px 0px;
+    }
+
+    .FormSection_mobile>div{
+        display: flex;
+        gap:20px;
+        align-items: center;
+        margin-bottom: 35px;
+    }
+
+    .FormSection_mobile p{
+        width: 389px;
+        text-align: left;
+    }
+
+    .FormSection {
+        height: auto;
+    }
+
+    .Circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .Circle img{
+        width: 40%;
+    }
+
+    .InputContainer{
+        flex-direction: column;
+    }
+
+    input:not([type="range"]),select,form label{
+        font-size: 25px;
+        padding: 15px;
+    
+    }
+
+    .RangeContainer {
+       width: 100%;
+    }
+
+    .RangeContainer p{
+        font-size: 25px;
+    }
+
+    #procent {
+        height: 15px;
+    }
+
+    #procent::-webkit-slider-thumb {
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        bottom: 20px;
+    }
+
+    .RangeContainer div {
+
+        margin-bottom: 35px;
+    }
+
+    form label {
+        width: 95%;
+        margin-top: 20px;
+        font-size: 20px;
+    }
+
+    form label img{
+        width: 4%;
+    }
+
+    form button {
+        font-size: 30px;
+        width: 400px;
+        height: 60px;
+        margin-top: 30px;
+    }
+
+    .Footer-Border{
+       height: 1px;
+       width: 100%;
+    }
+
+    footer .MainContainer{
+        flex-direction: column-reverse;
+        justify-content: space-around;
+    }
+
+    footer p:first-child {
+        width: auto;
+    }
+
+    footer{
+        height: 150px;
+    }
+
+    footer a{
+        font-size: 16px;
+    }
+
+    footer p {
+        font-size: 16px;
+    }
+
+  }
+
+  @media (max-width:640px){
+
+    .SliderContainer-Slider > div {
+        width: 320px;
+    }
+
+    
+
+    .MainContainer{
+        max-width: 320px;
+    }
+
+    logo {
+        font-size: 22px;
+    }
+
+    header ul a {
+        font-size: 13px;
+    }
+
+    header ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    header{
+        height: 150px;
+    }
+
+    h1{
+        width: auto;
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 22px;
+        width: auto;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 20px;
+    }
+
+    .MainSection-Buttons button {
+        width: 150px;
+    }
+
+    .MainSection-Buttons {
+        justify-content: space-between;
+    }
+
+    h2 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .FormSection p {
+        font-size: 20px;
+    }
+
+    .FormSection_mobile p {
+        width: 180px;
+        
+    }
+
+    .FormSection_mobile>div {
+        gap: 0px;
+        justify-content: space-between;
+    }
+
+    .FormSection_mobile{
+        width: 100%;
+    }
+
+    form button {
+        width: 90%;
+        font-size: 20px;
+        padding: 0px;
+        height: 50px;
+    }
+
+    .FormSection p {
+        font-size: 15px;
+    }
+
+    .FormSection .MainContainer > p{
+        font-size: 20px;
+    }
+
+    input:not([type="range"]), select, form label {
+        padding: 10px;
+    }
+
+    footer p {
+        font-size: 13px;
+    }
+
+    footer a {
+        font-size: 14px;
+    }
+
+    header{
+        position: static;
+    }
+}
