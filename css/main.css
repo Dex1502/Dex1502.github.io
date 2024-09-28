@@ -427,6 +427,7 @@ header .MainContainer>nav>a{
 
 .Menu_mobile{
     display: none;
+    padding-bottom: 50px;
 }
 
 .Menu_mobile div{
@@ -495,6 +496,7 @@ header .MainContainer>nav>a{
         border-radius: 0px;
         transform: translateX(100%);
         transition: .5s ease-in-out;
+        overflow: scroll;
     }
 
     logo{
