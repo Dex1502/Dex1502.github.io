@@ -46,6 +46,7 @@ document.querySelector('#MenuButton').addEventListener('click',()=>{
         menu.setAttribute('style','transform:translateX(0px)')
     }else{
         menu.removeAttribute('style')
+        document.body.removeAttribute('style')
     }
 })
 
