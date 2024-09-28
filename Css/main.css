@@ -1,794 +1,618 @@
-
-@font-face {
-    font-family: 'Lato';
-    src: url('../Fonts/Lato-Regular.ttf') format('truetype');
-    font-weight: 100;
-}
-
-@font-face {
-    font-family: 'Lato';
-    src: url('../Fonts/Lato-Medium.ttf') format('truetype');
-    font-weight: 400;
-}
-
 body{
     margin: 0px;
-    font-family: Lato;
-    font-weight: 100;
+    font-family: Ubuntu;
+    font-weight: 700;
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
 }
 
 header{
     width: 100%;
+    background: rgba(149, 100, 170, 1);
     height: 100px;
-    background: #10101DE5;
-    position: fixed;
+    margin-bottom: 30px;
 }
 
-logo{
-    text-transform: uppercase;
-    color:#fff;
-    font-size: 28px;
-    font-weight: 800;
-    font-family: Raleway;
-}
-
-span{
-    color:#43ABF0;
-}
-
-button{
-    font-size: 13px;
-    font-weight: 400;
-    text-transform: uppercase;
-    padding: 13px 15px;
-    color:#fff;
-    background: #3E9CDC;
-    border: solid 1px #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: Lato;
-
-}
-
-button:hover{
-    opacity: 0.7;
-}
-
-h1{
-    color: #000;
-    font-size: 48px;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin: 0px;
-    width: 780px;
-}
-
-h2{
-    color:#fff;
-    font-size: 36px;
-    font-weight: 800;
-    text-transform: uppercase;
-    margin: 0px;
-    margin-bottom:30px;
-}
-
-h3{
-    margin: 0px;
-    font-size: 20px;
-    color:#000;
-    font-weight: 700;
-}
-
-p{
-    font-size: 20px;
-    font-weight: 400;
-    margin:0px;
-}
-
-.MainContainer{
-    max-width: 1200px;
-    margin: 0px auto;
+header nav ul{
     display: flex;
-    height: 100%;/**/
+    gap:50px;
+    align-items: center;
+}
+
+nav li{
+    list-style: none;
+}
+
+ul{
+    padding: 0px;
+}
+
+ header nav a{
+    color:#fff;
+    font-size: 16px;
+}
+
+logo a{
+    font-size: 48px;
+    color:#fff;
+}
+
+header nav a:hover{
+    color: rgba(104, 70, 119, 1);
+}
+
+.Header-Prem{
+    color: rgba(255, 207, 45, 1);
+    background: rgba(104, 70, 119, 1);
+    padding: 6px 13px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+
+.Header-Prem:hover{
+    opacity: 0.8;
+    color:rgba(255, 207, 45, 1);
 }
 
 header .MainContainer{
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     height: 100%;
-    justify-content: space-between;
 }
 
-header ul{
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+.MainContainer{
+    max-width: 1170px;
+    margin: auto;
+}
+
+body>.MainContainer{
     display: flex;
-    gap:50px;
-}
-
-form{
-    margin: 0px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-input:not([type="range"]),select{
-    font-size: 18px;
-    padding: 12px;
-    width: 100%;
-    background: #FFFFFFD9;
-    border: #000 1px solid;
-    border-radius: 3px;
-    font-family: 'Lato';
-
-}
-
-
-
-input::placeholder{
-    color:#272733;
-}
-
-header ul a{
-    color:#fff;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: 13px;
-}
-
-header ul a:hover{
-    color:#43ABF0
+    gap:30px;
+    margin-bottom: 30px;
 }
 
 .MainSection{
-    background-image: url(../Images/Main.png);
-    height: 987px;
-    background-position: center;
+    margin-bottom: 30px;
 }
 
-.MainSection .MainContainer{
-    flex-direction: column;
-    justify-content: center;
-    gap: 100px;
+button{
+    font-family: Ubuntu;
+    font-weight: 700;
+    cursor: pointer;
 }
 
-.MainSection p::before{
-    content: "- ";
+menu{
+    width: 270px;
+    background: rgba(149, 100, 170, 0.1);
+    border: 2px solid rgba(149, 100, 170, 0.2);
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0px;
+    flex-shrink: 0;
 }
 
-.MainSection p{
-    margin-left: 10px;
-}
-
-.MainSection-Buttons{
+.Menu-Header{
     display: flex;
-    gap: 30px;
+    align-items: end;
+    gap: 10px;
 }
 
-.MainSection-Buttons button{
-    width: 183px;
+.Menu-Header>div{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
 }
 
-.MainSection-Buttons button:last-child{
-    background: #fff;
-    border-color: #000;
+.Menu-Header span{
     color:#000;
-}
-
-.FormSection{
-    background-image: url(../Images/Form.png);
-    background-color: #272733;
-    height: 900px;
-    background-position: center;
-}
-
-.FormSection .MainContainer{
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.FormSection p{
-    color:#BBBBBB;
-    font-size: 18px;
-}
-
-.FormSection-Circles{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 93%;
-    margin: 90px 0px 20px 0px;
-}
-
-.Circle{
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
-    background:#3E9CDC;
-    border:#286690 solid 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.CirclesContainer{
-    display: flex;
-    gap:20px;
-}
-
-.Circle_little{
-    width: 6px;
-    height: 6px;
-    border-radius: 6px;
-    background: #C4C4C4;
-}
-
-.FormSection-Labels{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 70px;
-}
-
-.FormSection-Labels p{
     font-size: 16px;
+}
+
+.Menu-Header a{
     color:#fff;
-    width: 209px;
+    font-size: 10px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background: rgba(104, 70, 119, 1);
+}
+
+.Menu-Header a:hover{
+    opacity: 0.8;
+}
+
+.Separator{
+    width: 100%;
+    height: 2px;
+    background: rgba(149, 100, 170, 0.2);
+    margin: 20px 0px;
+}
+
+menu nav a{
+    color:#000;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap:30px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+menu nav a:hover{
+    background: rgba(104, 70, 119, 1);
+    color:#fff;
+}
+
+menu nav li{
+    margin-bottom: 10px;
+}
+
+main{
+    width: 100%;
+}
+
+h1{
+    font-size: 40px;
+    margin: 0px;
+    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.Discount{
+    background: #C15CA1;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 30px;
+    gap:10px;
+}
+
+.Discount h2{
+    font-size: 40px;
+    color: #FFCF2D;
+    -webkit-text-stroke: #fff 1px;
+    margin: 0px;
     text-align: center;
 }
 
-.InputContainer{
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    margin-bottom: 30px;
-    width: 100%;
+.Discount p{
+    color:#fff;
+    font-size: 16px;
+    text-align: center;
 }
 
-#file{
-    display: none;
-}
-
-form label{
+timer{
     background: #fff;
-    padding: 10px;
-    border-radius: 4px;
-    text-transform: uppercase;
-    font-size: 15px;
-    font-weight: 600;
+    padding: 10px 20px;
     display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    justify-content: center;
-    width: 35%;
+    gap:10px;
+    border-radius: 5px;
 }
 
-form label:hover{
-    opacity: 0.9;
-}
-
-
-.RangeContainer{
-    width: 77%;
-}
-
-.RangeContainer p{
-    font-family: Lato;
-    font-size: 18px;
+timer span{
+    font-size: 40px;
     font-weight: 400;
-    color:#fff;
 }
 
-.RangeContainer div{
+.CardContainer{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    column-gap: 20px;
 }
 
-#procent {
-    width: 100%;
-    -webkit-appearance: none;
-    background-color: #FFFFFFB2;
-    height: 6px;
-    border-radius: 6px;
-  }
-  
-  #procent::-webkit-slider-runnable-track {
-    height: 10px;
-    -webkit-appearance: none;
-    color: #13bba4;
-    margin-top: -1px;
-  }
-  
-  #procent::-webkit-slider-thumb {
-    width: 37px;
-    border-radius: 37px;
-    background: #42A9ED;
-    -webkit-appearance: none;
-    height: 37px;
-    border:3px solid #286690;
+.Card{
+    background: rgba(149, 100, 170, 0.1);
+    border: 2px solid rgba(149, 100, 170, 1);
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    width: 150px;
+    align-items: center;
     position: relative;
-    bottom: 13px;
-  }
+    transition: .3s ease;
+}
 
-  #procent::-webkit-slider-thumb:hover{
-    background: rgb(42, 128, 185);
-  }
+.Card span{
+    color:#000;
+    font-size: 24px;
+    transition: .3s ease;
+}
 
-  form button{
-    width: 370px;
-    height: 48px;
-    margin-top: 30px;
-  }
+.Card button{
+    color:#ccc;
+    font-size: 16px;
+    border:none;
+    background: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 20px 0px;
+    width: 100%;
+    transition: .3s ease;
+}
 
-  footer{
-    height: 80px;
-    background: #3D4050;
-  }
+.Card button:hover{
+    background: #FFCF2D;
+    color:#000;
+}
 
-  footer .MainContainer{
-    align-items: center;
-    justify-content: space-between;
-  }
+.Card:has(button:hover){
+    background: #9564AA;
+}
 
-  footer p{
-    color: #fff;
-    font-size: 13px;
-    font-weight: 400;
-  }
-
-  footer span{
-    text-transform: uppercase;
-    font-family: Lato;
+.Card span:has(+ button:hover){
     color:#fff;
-  }
+}
 
-  .Footer-Container{
-    display: flex;
-    gap:50px;
-  }
+.Card h3{
+    color:#000;
+    margin: 0;
+    font-size: 14px;
+    background:#FFCF2D;
+    border-radius: 5px;
+    padding: 5px 10px;
+    position: absolute;
+    top:-15px;
+}
 
-  .Footer-Container div{
+.Confirm{
     display: flex;
     gap:10px;
     align-items: center;
-  }
+}
 
-  footer a{
-    color:#fff;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 400;
-  }
+.Confirm p{
+    font-weight: 500;
+}
 
-  .Footer-Border{
-    width: 1px;
-    height: 18px;
-    background: #fff;
-  }
+.Confirm a{
+    color: #9564AA;
 
-  .FormSection_mobile{
-    display: none;
-  }
+}
 
-  .ReviewSection{
-    background: #1f1f29;
-  }
-
-  .ReviewSection .MainContainer{
-    flex-direction: column;
+.Checkbox{
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    border:solid #ccc 1px;
+    cursor: pointer;
+    display: flex;
     align-items: center;
-    height: auto;
-    padding: 100px 0px;
-  }
-
-  .ReviewSection-SliderContainer{
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .SliderContainer-Slider{
-    display: flex;
-    gap: 30px;
-    width: min-content;
-  }
-
-  .SliderContainer-Slider > div{
-    width: 380px;
-    background: #dfdfe1;
-    padding: 20px;
-    box-sizing: border-box;
-    border-radius: 20px;
-  }
-
-  .SliderContainer-Slider div p {
-    color: #272733;
-    margin: 10px 0px 30px 0px;
+    justify-content:center;
+    flex-shrink: 0;
 }
 
-  .ReviewSection-Buttons button{
-    background: none;
-    border:none;
-    padding: 0px;
-  }
+.Active{
+    background: #9564AA;
+    border-color: #9564AA;
+}
 
-  .ReviewSection-Buttons{
-    width: 100%;
+.Crystall-Row{
     display: flex;
-    gap: 10px;
-    justify-content: end;
+    justify-content: center;
+    gap:10px;
     margin-bottom: 20px;
-  }
+}
 
-  .ReviewSection-Buttons img{
-    width: 80px;
-  }
-
-  .ReviewSection-Pagination{
-    width: 100%;
-    margin-top: 20px;
-    display: flex;
+.Crystall-Item{
+    display:flex;
+    flex-direction: column;
     gap: 5px;
-    justify-content: end;
+    align-items: center;
+}
+
+.Crystall-Item>div{
+    width: 50px;
+    height: 50px;
+    background: #9564AA1A;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Crystall-Item>div:hover{
+    background: #FFCF2D;
+}
+
+.Crystall-Item span{
+    font-size: 12px;
+    color: #9564AA;
+    text-align: center;
+    width: 110px;
+}
+
+#Scene-1{
+    position: absolute;
+    top: 270px;
+    left: 20px;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#Scene-2{
+    position: absolute;
+    right: 0px;
+    top: 160px;
+    z-index: -1;
+    overflow: hidden;
+}
+
+header .MainContainer>nav>a{
+    display: none;
+}
+
+#MenuButton{
+    display: none;
+    border:none;
+    background: none;
+    cursor: pointer;
+}
+
+#MenuButton img{
+    width: 24px;
+}
+
+
+.swiper {
+    height: 90px;
+    display: none !important;
   }
 
-  .ReviewSection-Pagination div{
-    width: 10px;
-    height: 10px;
+.Card_mobile{
+    background: #9564AA;
     border-radius: 10px;
-    background: #fff;
-  }
-
-  .Active{
-    background: #3E9CDC !important;
-  }
-
-  .SliderContainer-Slider img{
-    width: 35px;
+    box-sizing: border-box;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: end;
+    width: 80%;
+    margin-left: auto;
+    position: relative;
 }
 
-.StarsContainer{
+.Card_mobile span{
+    font-size: 28px;
+    color:#fff;
+}
+
+.swiper-pagination-bullet{
+    background: #FFC500 !important;
+
+}
+
+.Card_mobile h3{
+    color:#000;
+    margin: 0;
+    font-size: 18px;
+    background:#FFCF2D;
+    border-radius: 5px;
+    padding: 5px 10px;
+    position: absolute;
+    left: -25px;
+}
+
+#TryNowButton{
+    display: none;
+    background: #FFC500;
+    border-radius: 10px;
+    padding: 15px 0px;
+    width: 100%;
+    font-size: 20px;
+    border: none;
+    margin-top: 30px;
+}
+
+.CrystallSection_mobile{
+    display: none;
+}
+
+.ImgContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.Menu_mobile{
+    display: none;
+}
+
+.Menu_mobile div{
     margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
 }
 
-  @media(max-width:1270px){
-    .MainContainer{
-        max-width: 900px;
+.Menu_mobile a{
+    color:#fff;
+}
+  
+
+@media (min-width:1181px){
+    .Card:last-child{
+        width: 100%;
+        background: #AA646433;
+        border: 2px solid #AA6464;
+        flex-direction: row;
+        justify-content: center;
+        gap:50px;
     }
     
-    .CirclesContainer{
-        gap:13px;
+    .Card:last-child button{
+        width: 185px;
+    }
+}
+
+@media (max-width:1180px){
+    .MainContainer{
+        max-width: 970px;
     }
 
-    .Circle{
-        width: 75px;
-        height: 75px;
+    .Card:nth-last-child(-n+2){
+        width: 48%;
+        background: #AA646433;
+        border: 2px solid #AA6464;
+        flex-direction: row;
+        justify-content: center;
+        gap:50px;
     }
-
-    .SliderContainer-Slider > div {
-        width: 280px;
+    
+    .Card:nth-last-child(-n+2) button{
+        width: 145px;
     }
+}
 
-
-    .FormSection-Labels p {
-        width: 158px;
-    }
-
-    form label {
-        width: 34%;
-    }
-
-    footer p{
-        font-size: 11px;
-        text-align: center;
-    }
-
-    footer p:first-child{
-        width: 130px;
-    }
-
-    .SliderContainer-Slider div p {
-        font-size: 17px;
-    }
-  }
-
-  @media (max-width:980px){
-
-    .SliderContainer-Slider > div {
-        width: 285px;
-    }
-
-    .SliderContainer-Slider h3{
-        font-size: 23px;
-    }
-
-    .SliderContainer-Slider div p {
-        font-size: 20px;
+@media (max-width:980px){
+    #Scene-1, #Scene-2{
+        display: none;
     }
 
     .MainContainer{
         max-width: 600px;
     }
-    header ul a{
-        font-size: 16px;
-    }
 
-    header ul {
-        gap: 12px;
+    menu {
+        position: fixed;
+        z-index: 2;
+        background: rgb(211 163 231);
+        width: 100%;
+        left: 0px;
+        top: 50px;
+        height: 100%;
+        border-radius: 0px;
+        transform: translateX(100%);
+        transition: .5s ease-in-out;
     }
 
     logo{
-        font-size: 26px;
-    }
-
-    h1{
-        font-size: 55px;
-        width: 400;
-    }
-    
-    h3{
-        font-size: 35px;
-        width: 500px;
-    }
-
-    p{
-        font-size: 25px;
-    }
-
-    button{
-        font-size: 30px;
-    }
-
-    .MainSection-Buttons button {
-        width: 250px;
-    }
-
-    .MainSection .MainContainer {
-        gap: 50px;
-    }
-
-    h2{
-        font-size: 52px;
-    }
-
-    .FormSection p {
-        font-size: 30px;
-        text-align: center;
-    }
-
-    .FormSection .MainContainer{
-        height: auto;
-        padding: 100px 0px;
-    }
-
-    .FormSection-Labels{
         display: none;
     }
 
-    .FormSection-Circles{
-        display: none;
+    header{
+        height: 50px;
     }
 
-    .FormSection_mobile{
+    header .MainContainer>nav>a{
         display: block;
-        margin: 50px 0px 60px 0px;
     }
 
-    .FormSection_mobile>div{
-        display: flex;
-        gap:20px;
-        align-items: center;
-        margin-bottom: 35px;
+    header .MainContainer>nav>ul{
+        display: none;
     }
 
-    .FormSection_mobile p{
-        width: 389px;
+    #MenuButton{
+        display: block;
+    }
+
+    .Discount{
+        display: none;
+    }
+
+    .swiper{
+        display: block !important;
+    }
+
+    .CardContainer{
+        display: none;
+    }
+
+    #TryNowButton{
+        display: block;
+    }
+
+    .CrystallSection{
+        display: none;
+    }
+
+    .CrystallSection_mobile{
+        display: block;
+    }
+
+    .Crystall-Item{
+        flex-direction: row;
+        margin-bottom: 20px;
+        gap:10px;
+    }
+
+    .Crystall-Item span{
+        width: auto;
+        font-size: 18px;
         text-align: left;
     }
 
-    .FormSection {
-        height: auto;
+    .Menu_mobile{
+        display: block;
     }
 
-    .Circle {
-        width: 100px;
-        height: 100px;
-    }
-
-    .Circle img{
-        width: 40%;
-    }
-
-    .InputContainer{
-        flex-direction: column;
-    }
-
-    input:not([type="range"]),select,form label{
-        font-size: 25px;
-        padding: 15px;
     
+
+    
+}
+
+@media (max-width:610px){
+    .MainContainer{
+        max-width: 410px;
     }
 
-    .RangeContainer {
-       width: 100%;
-    }
-
-    .RangeContainer p{
-        font-size: 25px;
-    }
-
-    #procent {
-        height: 15px;
-    }
-
-    #procent::-webkit-slider-thumb {
-        width: 50px;
-        height: 50px;
-        border-radius: 50px;
-        bottom: 20px;
-    }
-
-    .RangeContainer div {
-
-        margin-bottom: 35px;
-    }
-
-    form label {
-        width: 95%;
-        margin-top: 20px;
-        font-size: 20px;
-    }
-
-    form label img{
-        width: 4%;
-    }
-
-    form button {
+    h1{
         font-size: 30px;
-        width: 400px;
-        height: 60px;
-        margin-top: 30px;
+        text-shadow: none;
     }
 
-    .Footer-Border{
-       height: 1px;
-       width: 100%;
+    .Crystall-Item span{
+        font-size: 14px;
     }
+}
 
-    footer .MainContainer{
-        flex-direction: column-reverse;
-        justify-content: space-around;
-    }
-
-    footer p:first-child {
-        width: auto;
-    }
-
-    footer{
-        height: 150px;
-    }
-
-    footer a{
-        font-size: 16px;
-    }
-
-    footer p {
-        font-size: 16px;
-    }
-
-  }
-
-  @media (max-width:640px){
-
-    .SliderContainer-Slider > div {
-        width: 320px;
-    }
-
-    
-
+@media (max-width:420px){
     .MainContainer{
         max-width: 320px;
     }
 
-    logo {
-        font-size: 22px;
-    }
-
-    header ul a {
-        font-size: 13px;
-    }
-
-    header ul {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-    }
-
-    header{
-        height: 150px;
-    }
-
     h1{
-        width: auto;
-        font-size: 32px;
-    }
-
-    h3 {
-        font-size: 22px;
-        width: auto;
-    }
-
-    p {
-        font-size: 18px;
-    }
-
-    button {
         font-size: 20px;
     }
 
-    .MainSection-Buttons button {
-        width: 150px;
+    .Card_mobile h3 {
+        font-size: 14px;
+        left: -16px;
     }
 
-    .MainSection-Buttons {
-        justify-content: space-between;
+    .Card_mobile{
+        width: 95%;
     }
 
-    h2 {
-        font-size: 40px;
-        text-align: center;
+    #TryNowButton{
+        font-size: 16px;
     }
 
-    .FormSection p {
-        font-size: 20px;
+    .Confirm p{
+        font-size: 10px;
     }
 
-    .FormSection_mobile p {
-        width: 180px;
-        
+    .Crystall-Item span{
+        font-size: 12px;
     }
 
-    .FormSection_mobile>div {
-        gap: 0px;
-        justify-content: space-between;
-    }
-
-    .FormSection_mobile{
-        width: 100%;
-    }
-
-    form button {
-        width: 90%;
-        font-size: 20px;
-        padding: 0px;
-        height: 50px;
-    }
-
-    .FormSection p {
-        font-size: 15px;
-    }
-
-    .FormSection .MainContainer > p{
-        font-size: 20px;
-    }
-
-    input:not([type="range"]), select, form label {
-        padding: 10px;
-    }
-
-    footer p {
-        font-size: 13px;
-    }
-
-    footer a {
+    menu nav a{
         font-size: 14px;
     }
 
-    header{
-        position: static;
+    menu nav li{
+        margin: 0px;
     }
 }
+
