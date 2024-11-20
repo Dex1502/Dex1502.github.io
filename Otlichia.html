@@ -1,0 +1,33 @@
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+
+<body>
+<textarea rows='30' cols='30' id="beginStr">
+
+</textarea>
+<button id="Start">Start</button>
+
+<textarea rows='30' cols='30' id="endStr">
+</textarea>
+
+<input value='720' id="sdvig">
+
+<script>
+document.querySelector('#Start').addEventListener('click',()=>{
+	let str=beginStr.value
+	let Nums=[]
+	let xes=str.match(/x="\d+/g)
+	xes.forEach(e=>{
+		let zamena=parseInt(e.match(/\d+/)[0])+parseInt(sdvig.value)
+		str=str.replace('x="'+e.match(/\d+/)[0],`x="${zamena}`)
+		
+	})
+	str=str.replace(/_l_/g,'_r_')
+	endStr.value=str
+})
+</script>
+</body>
+
+</html>

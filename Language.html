@@ -1,0 +1,181 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <h2>Инструкция</h2>
+    <p>В поле "Токен" вводится токен локализации, без последней цифры.</p>
+    <p>
+      В поле "Русский" вводится список предметов на русском. Должны быть цифры
+      нумерации и Enter после каждого элемента.
+    </p>
+    <p>
+      Например:<br />1. Мороженое<br />
+      2. Сувенирная тарелка<br />
+      3. Театральный билет<br />
+    </p>
+    <p>Поле "Транслит" заполняется автоматически после нажатия Start</p>
+    <p>
+      Чтобы применить выделение на слова (для "по описанию") нужно перед нужным
+      словом на транслите добавить символ "@".<br />
+      Если нужно выделить несколько слов, то нужно поставить символ "@" с двух
+      сторон.
+    </p>
+    <p>
+      Например:<br />@Morozhenoye<br />
+      @Suvenirnaya tarelka@<br />
+      Teatral'nyy @bilet<br />
+    </p>
+
+    <div style="display: flex; gap: 20px">
+      <div style="display: flex; flex-direction: column">
+        Токен:
+        <input type="text" placeholder="ho_203_desc_" id="token" />
+      </div>
+      <div style="display: flex; flex-direction: column">
+        Русский
+        <textarea rows="30" cols="30" id="rus"> </textarea>
+      </div>
+      <div style="display: flex; flex-direction: column">
+        Транслит
+        <textarea rows="30" cols="30" id="eng"> </textarea>
+      </div>
+
+      <div style="display: flex; flex-direction: column">
+        Вывод
+        <textarea rows="30" cols="30" id="vivod"> </textarea>
+      </div>
+    </div>
+    <button id="Start" style="width: 300px; height: 30px; margin-top: 20px">
+      Start
+    </button>
+
+    <script>
+      rus.value = "";
+      eng.value = "";
+      vivod.value = "";
+
+      document.querySelector("#Start").addEventListener("click", () => {
+        let vivodP = "";
+        let vivodEng = "";
+        const rusArr = rus.value.split("\n");
+        let engArr;
+        if (eng.value != "") {
+          engArr = eng.value.split("\n");
+        }
+        rusArr.forEach((e, i) => {
+          const rusStr = e.slice(3).trim();
+          let engStr;
+          if (eng.value != "") {
+            engStr = engArr[i];
+          } else {
+            engStr = transliterate(rusStr);
+            vivodEng += engStr + "\n";
+          }
+
+          if (engStr.includes("@")) {
+            if (engStr.match(/@/g).length == 2) {
+              engStr = engStr.replace(
+                /@.+@/,
+                engStr
+                  .match(/@.+@/)[0]
+                  .replace("@", "#ff05bdd4*")
+                  .replace("@", "*")
+              );
+            } else {
+              engStr = engStr.replace(
+                /@\w+/,
+                engStr.match(/@\w+/)[0].replace("@", "#ff05bdd4*") + "*"
+              );
+            }
+          }
+          const res = `<Element>\n\t<Token>${
+            token.value + (i + 1)
+          }</Token>\n\t<!-- ${rusStr} -->\n\t<Text>test_${engStr}</Text>\n</Element>\n`;
+          vivodP += res;
+        });
+        vivod.value = vivodP;
+        if (eng.value == "") {
+          eng.value = vivodEng;
+        }
+      });
+
+      function transliterate(str) {
+        const translitMap = {
+          А: "A",
+          Б: "B",
+          В: "V",
+          Г: "G",
+          Д: "D",
+          Е: "E",
+          Ё: "Yo",
+          Ж: "Zh",
+          З: "Z",
+          И: "I",
+          Й: "Y",
+          К: "K",
+          Л: "L",
+          М: "M",
+          Н: "N",
+          О: "O",
+          П: "P",
+          Р: "R",
+          С: "S",
+          Т: "T",
+          У: "U",
+          Ф: "F",
+          Х: "Kh",
+          Ц: "Ts",
+          Ч: "Ch",
+          Ш: "Sh",
+          Щ: "Shch",
+          Ъ: "",
+          Ы: "Y",
+          Ь: "'",
+          Э: "E",
+          Ю: "Yu",
+          Я: "Ya",
+          а: "a",
+          б: "b",
+          в: "v",
+          г: "g",
+          д: "d",
+          е: "e",
+          ё: "yo",
+          ж: "zh",
+          з: "z",
+          и: "i",
+          й: "y",
+          к: "k",
+          л: "l",
+          м: "m",
+          н: "n",
+          о: "o",
+          п: "p",
+          р: "r",
+          с: "s",
+          т: "t",
+          у: "u",
+          ф: "f",
+          х: "kh",
+          ц: "ts",
+          ч: "ch",
+          ш: "sh",
+          щ: "shch",
+          ъ: "",
+          ы: "y",
+          ь: "'",
+          э: "e",
+          ю: "yu",
+          я: "ya",
+        };
+
+        return str
+          .split("")
+          .map((char) => translitMap[char] || char)
+          .join("");
+      }
+    </script>
+  </body>
+</html>

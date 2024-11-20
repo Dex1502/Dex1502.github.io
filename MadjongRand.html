@@ -1,0 +1,68 @@
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+
+<body>
+Код <input type="text" id="code">
+<div style="display:flex;flex-direction:column;width:300px;">
+1 <input type="text" id="p1">
+2 <input type="text" id="p2">
+3 <input type="text" id="p3">
+4 <input type="text" id="p4">
+5 <input type="text" id="p5">
+6 <input type="text" id="p6">
+7 <input type="text" id="p7">
+8 <input type="text" id="p8">
+9 <input type="text" id="p9">
+10 <input type="text" id="p10">
+11 <input type="text" id="p11">
+12 <input type="text" id="p12">
+13 <input type="text" id="p13">
+14 <input type="text" id="p14">
+15 <input type="text" id="p15">
+16 <input type="text" id="p16">
+17 <input type="text" id="p17">
+18 <input type="text" id="p18">
+19 <input type="text" id="p19">
+20 <input type="text" id="p20">
+</div>
+<textarea rows='30' cols='30' id="vivod">
+</textarea>
+<button id="Start">Start</button>
+
+
+
+<script>
+
+document.querySelector('#Start').addEventListener('click',()=>{
+	let plitki=[]
+	let max=0
+	let counter=0
+	document.querySelectorAll('div input').forEach(e=>{
+		plitki.push(parseInt(e.value))
+		max+=parseInt(e.value)
+	})
+	
+	while(counter<max){
+		let numPl=getRandomInt(20)
+		if(plitki[numPl-1]>0){
+			vivod.value+="<action>"+code.value+'_chip'+numPl+"</action>"+"\n"
+			counter++
+			plitki[numPl-1]-=1
+		}
+	}
+	
+	
+})
+
+
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max)+1;
+}
+
+</script>
+</body>
+
+</html>
