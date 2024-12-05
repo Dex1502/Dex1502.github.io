@@ -1,0 +1,625 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <h2>Инструкция</h2>
+    <p>Для быстрой расстановки фишек можно зажать ЛКМ и водить по нужным</p>
+    <p>
+      Для того, чтобы перенести часть фишек на отдельный слой - нужно повторно
+      прожать необходимые фишки. Фишки с номером 1 будут на одном слое, с
+      номером 2 на другом и т.д.
+    </p>
+    <p>
+      Чтобы удалить фишку, нужно навестись на неё и нажать "Delete" на
+      клавиатуре. Можно зажать и водить по фишкам
+    </p>
+    <p>
+      После того как уровень собран - нужно скопировать все получившиеся парамы,
+      вставить в поле "Для рандома" и нажать "Зарандомить"
+    </p>
+    <p>
+      Пример вставки в рандомайзер:<br />
+      &lt;param><br />
+      &emsp;&lt; name>Level&lt; /name><br />
+      &emsp;&lt; actions><br />
+      &emsp;&emsp;&lt; action>001_01_chip1&lt; /action><br />
+      &emsp;&emsp;&lt; action>001_01_chip1&lt; /action><br />
+      &emsp;&lt; /actions><br />
+      &emsp;&lt; points><br />
+      &emsp;&emsp;&lt; hge_vector x="332" y="188" /><br />
+      &emsp;&emsp;&lt; hge_vector x="396" y="188" /><br />
+      &emsp;&lt; /points><br />
+      &lt; /param><br />
+
+      &lt; param><br />
+      ...<br />
+      &lt; /param>
+    </p>
+    <p>Profit</p>
+
+    Код <input type="text" id="code" placeholder="001_02" />
+    <div class="Main">
+      <div class="Row">
+        <div class="Plitka" data='x="246" y="235"'></div>
+        <div class="Plitka" data='x="246" y="319"'></div>
+        <div class="Plitka" data='x="246" y="403"'></div>
+        <div class="Plitka" data='x="246" y="487"'></div>
+        <div class="Plitka" data='x="246" y="571"'></div>
+        <div class="Plitka" data='x="246" y="655"'></div>
+      </div>
+      <div class="Row1">
+        <div class="Plitka" data='x="319" y="193"'></div>
+        <div class="Plitka" data='x="319" y="277"'></div>
+        <div class="Plitka" data='x="319" y="361"'></div>
+        <div class="Plitka" data='x="319" y="445"'></div>
+        <div class="Plitka" data='x="319" y="529"'></div>
+        <div class="Plitka" data='x="319" y="613"'></div>
+        <div class="Plitka" data='x="319" y="697"'></div>
+      </div>
+      <div class="Row">
+        <div class="Plitka" data='x="392" y="235"'></div>
+        <div class="Plitka" data='x="392" y="319"'></div>
+        <div class="Plitka" data='x="392" y="403"'></div>
+        <div class="Plitka" data='x="392" y="487"'></div>
+        <div class="Plitka" data='x="392" y="571"'></div>
+        <div class="Plitka" data='x="392" y="655"'></div>
+      </div>
+      <div class="Row1">
+        <div class="Plitka" data='x="465" y="193"'></div>
+        <div class="Plitka" data='x="465" y="277"'></div>
+        <div class="Plitka" data='x="465" y="361"'></div>
+        <div class="Plitka" data='x="465" y="445"'></div>
+        <div class="Plitka" data='x="465" y="529"'></div>
+        <div class="Plitka" data='x="465" y="613"'></div>
+        <div class="Plitka" data='x="465" y="697"'></div>
+      </div>
+      <div class="Row">
+        <div class="Plitka" data='x="538" y="235"'></div>
+        <div class="Plitka" data='x="538" y="319"'></div>
+        <div class="Plitka" data='x="538" y="403"'></div>
+        <div class="Plitka" data='x="538" y="487"'></div>
+        <div class="Plitka" data='x="538" y="571"'></div>
+        <div class="Plitka" data='x="538" y="655"'></div>
+      </div>
+      <div class="Row1">
+        <div class="Plitka" data='x="611" y="193"'></div>
+        <div class="Plitka" data='x="611" y="277"'></div>
+        <div class="Plitka" data='x="611" y="361"'></div>
+        <div class="Plitka" data='x="611" y="445"'></div>
+        <div class="Plitka" data='x="611" y="529"'></div>
+        <div class="Plitka" data='x="611" y="613"'></div>
+        <div class="Plitka" data='x="611" y="697"'></div>
+      </div>
+      <div class="Row">
+        <div class="Plitka" data='x="684" y="235"'></div>
+        <div class="Plitka" data='x="684" y="319"'></div>
+        <div class="Plitka" data='x="684" y="403"'></div>
+        <div class="Plitka" data='x="684" y="487"'></div>
+        <div class="Plitka" data='x="684" y="571"'></div>
+        <div class="Plitka" data='x="684" y="655"'></div>
+      </div>
+      <div class="Row1">
+        <div class="Plitka" data='x="757" y="193"'></div>
+        <div class="Plitka" data='x="757" y="277"'></div>
+        <div class="Plitka" data='x="757" y="361"'></div>
+        <div class="Plitka" data='x="757" y="445"'></div>
+        <div class="Plitka" data='x="757" y="529"'></div>
+        <div class="Plitka" data='x="757" y="613"'></div>
+        <div class="Plitka" data='x="757" y="697"'></div>
+      </div>
+      <div class="Row">
+        <div class="Plitka" data='x="830" y="235"'></div>
+        <div class="Plitka" data='x="830" y="319"'></div>
+        <div class="Plitka" data='x="830" y="403"'></div>
+        <div class="Plitka" data='x="830" y="487"'></div>
+        <div class="Plitka" data='x="830" y="571"'></div>
+        <div class="Plitka" data='x="830" y="655"'></div>
+      </div>
+      <div class="Row1">
+        <div class="Plitka" data='x="903" y="193"'></div>
+        <div class="Plitka" data='x="903" y="277"'></div>
+        <div class="Plitka" data='x="903" y="361"'></div>
+        <div class="Plitka" data='x="903" y="445"'></div>
+        <div class="Plitka" data='x="903" y="529"'></div>
+        <div class="Plitka" data='x="903" y="613"'></div>
+        <div class="Plitka" data='x="903" y="697"'></div>
+      </div>
+      <div class="Row">
+        <div class="Plitka" data='x="976" y="235"'></div>
+        <div class="Plitka" data='x="976" y="319"'></div>
+        <div class="Plitka" data='x="976" y="403"'></div>
+        <div class="Plitka" data='x="976" y="487"'></div>
+        <div class="Plitka" data='x="976" y="571"'></div>
+        <div class="Plitka" data='x="976" y="655"'></div>
+      </div>
+      <div class="Row1">
+        <div class="Plitka" data='x="1049" y="193"'></div>
+        <div class="Plitka" data='x="1049" y="277"'></div>
+        <div class="Plitka" data='x="1049" y="361"'></div>
+        <div class="Plitka" data='x="1049" y="445"'></div>
+        <div class="Plitka" data='x="1049" y="529"'></div>
+        <div class="Plitka" data='x="1049" y="613"'></div>
+        <div class="Plitka" data='x="1049" y="697"'></div>
+      </div>
+      <div class="Row">
+        <div class="Plitka" data='x="1122" y="235"'></div>
+        <div class="Plitka" data='x="1122" y="319"'></div>
+        <div class="Plitka" data='x="1122" y="403"'></div>
+        <div class="Plitka" data='x="1122" y="487"'></div>
+        <div class="Plitka" data='x="1122" y="571"'></div>
+        <div class="Plitka" data='x="1122" y="655"'></div>
+      </div>
+      <div class="Row1">
+        <div class="Plitka" data='x="1195" y="193"'></div>
+        <div class="Plitka" data='x="1195" y="277"'></div>
+        <div class="Plitka" data='x="1195" y="361"'></div>
+        <div class="Plitka" data='x="1195" y="445"'></div>
+        <div class="Plitka" data='x="1195" y="529"'></div>
+        <div class="Plitka" data='x="1195" y="613"'></div>
+        <div class="Plitka" data='x="1195" y="697"'></div>
+      </div>
+      <div class="Row">
+        <div class="Plitka" data='x="1268" y="235"'></div>
+        <div class="Plitka" data='x="1268" y="319"'></div>
+        <div class="Plitka" data='x="1268" y="403"'></div>
+        <div class="Plitka" data='x="1268" y="487"'></div>
+        <div class="Plitka" data='x="1268" y="571"'></div>
+        <div class="Plitka" data='x="1268" y="655"'></div>
+      </div>
+      <div class="Row1">
+        <div class="Plitka" data='x="1341" y="193"'></div>
+        <div class="Plitka" data='x="1341" y="277"'></div>
+        <div class="Plitka" data='x="1341" y="361"'></div>
+        <div class="Plitka" data='x="1341" y="445"'></div>
+        <div class="Plitka" data='x="1341" y="529"'></div>
+        <div class="Plitka" data='x="1341" y="613"'></div>
+        <div class="Plitka" data='x="1341" y="697"'></div>
+      </div>
+      <div class="Row">
+        <div class="Plitka" data='x="1414" y="235"'></div>
+        <div class="Plitka" data='x="1414" y="319"'></div>
+        <div class="Plitka" data='x="1414" y="403"'></div>
+        <div class="Plitka" data='x="1414" y="487"'></div>
+        <div class="Plitka" data='x="1414" y="571"'></div>
+        <div class="Plitka" data='x="1414" y="655"'></div>
+      </div>
+      <div class="Row1">
+        <div class="Plitka" data='x="1487" y="193"'></div>
+        <div class="Plitka" data='x="1487" y="277"'></div>
+        <div class="Plitka" data='x="1487" y="361"'></div>
+        <div class="Plitka" data='x="1487" y="445"'></div>
+        <div class="Plitka" data='x="1487" y="529"'></div>
+        <div class="Plitka" data='x="1487" y="613"'></div>
+        <div class="Plitka" data='x="1487" y="697"'></div>
+      </div>
+
+      <!-- <div class="Plitka" data='x="221" y="188"'></div>
+      <div class="Plitka" data='x="319" y="188"'></div>
+      <div class="Plitka" data='x="417" y="188"'></div>
+      <div class="Plitka" data='x="515" y="188"'></div>
+      <div class="Plitka" data='x="613" y="188"'></div>
+      <div class="Plitka" data='x="711" y="188"'></div>
+      <div class="Plitka" data='x="809" y="188"'></div>
+      <div class="Plitka" data='x="907" y="188"'></div>
+      <div class="Plitka" data='x="1005" y="188"'></div>
+      <div class="Plitka" data='x="1103" y="188"'></div>
+      <div class="Plitka" data='x="1201" y="188"'></div>
+      <div class="Plitka" data='x="1299" y="188"'></div>
+      <div class="Plitka" data='x="1397" y="188"'></div>
+      <div class="Plitka" data='x="1495" y="188"'></div>
+      <div class="Plitka" data='x="1593" y="188"'></div>
+      <div class="Plitka" data='x="1691" y="188"'></div>
+      <div class="Plitka" data='x="1789" y="188"'></div>
+      <div class="Plitka" data='x="1887" y="188"'></div>
+      <div class="Plitka" data='x="1985" y="188"'></div>
+      <div class="Plitka" data='x="2083" y="188"'></div>
+
+      <div class="Plitka" data='x="221" y="272"'></div>
+      <div class="Plitka" data='x="319" y="272"'></div>
+      <div class="Plitka" data='x="417" y="272"'></div>
+      <div class="Plitka" data='x="515" y="272"'></div>
+      <div class="Plitka" data='x="613" y="272"'></div>
+      <div class="Plitka" data='x="711" y="272"'></div>
+      <div class="Plitka" data='x="809" y="272"'></div>
+      <div class="Plitka" data='x="907" y="272"'></div>
+      <div class="Plitka" data='x="1005" y="272"'></div>
+      <div class="Plitka" data='x="1103" y="272"'></div>
+      <div class="Plitka" data='x="1201" y="272"'></div>
+      <div class="Plitka" data='x="1299" y="272"'></div>
+      <div class="Plitka" data='x="1397" y="272"'></div>
+      <div class="Plitka" data='x="1495" y="272"'></div>
+      <div class="Plitka" data='x="1593" y="272"'></div>
+      <div class="Plitka" data='x="1691" y="272"'></div>
+      <div class="Plitka" data='x="1789" y="272"'></div>
+      <div class="Plitka" data='x="1887" y="272"'></div>
+      <div class="Plitka" data='x="1985" y="272"'></div>
+      <div class="Plitka" data='x="2083" y="272"'></div>
+
+      <div class="Plitka" data='x="221" y="356"'></div>
+      <div class="Plitka" data='x="319" y="356"'></div>
+      <div class="Plitka" data='x="417" y="356"'></div>
+      <div class="Plitka" data='x="515" y="356"'></div>
+      <div class="Plitka" data='x="613" y="356"'></div>
+      <div class="Plitka" data='x="711" y="356"'></div>
+      <div class="Plitka" data='x="809" y="356"'></div>
+      <div class="Plitka" data='x="907" y="356"'></div>
+      <div class="Plitka" data='x="1005" y="356"'></div>
+      <div class="Plitka" data='x="1103" y="356"'></div>
+      <div class="Plitka" data='x="1201" y="356"'></div>
+      <div class="Plitka" data='x="1299" y="356"'></div>
+      <div class="Plitka" data='x="1397" y="356"'></div>
+      <div class="Plitka" data='x="1495" y="356"'></div>
+      <div class="Plitka" data='x="1593" y="356"'></div>
+      <div class="Plitka" data='x="1691" y="356"'></div>
+      <div class="Plitka" data='x="1789" y="356"'></div>
+      <div class="Plitka" data='x="1887" y="356"'></div>
+      <div class="Plitka" data='x="1985" y="356"'></div>
+      <div class="Plitka" data='x="2083" y="356"'></div>
+
+      <div class="Plitka" data='x="221" y="440"'></div>
+      <div class="Plitka" data='x="319" y="440"'></div>
+      <div class="Plitka" data='x="417" y="440"'></div>
+      <div class="Plitka" data='x="515" y="440"'></div>
+      <div class="Plitka" data='x="613" y="440"'></div>
+      <div class="Plitka" data='x="711" y="440"'></div>
+      <div class="Plitka" data='x="809" y="440"'></div>
+      <div class="Plitka" data='x="907" y="440"'></div>
+      <div class="Plitka" data='x="1005" y="440"'></div>
+      <div class="Plitka" data='x="1103" y="440"'></div>
+      <div class="Plitka" data='x="1201" y="440"'></div>
+      <div class="Plitka" data='x="1299" y="440"'></div>
+      <div class="Plitka" data='x="1397" y="440"'></div>
+      <div class="Plitka" data='x="1495" y="440"'></div>
+      <div class="Plitka" data='x="1593" y="440"'></div>
+      <div class="Plitka" data='x="1691" y="440"'></div>
+      <div class="Plitka" data='x="1789" y="440"'></div>
+      <div class="Plitka" data='x="1887" y="440"'></div>
+      <div class="Plitka" data='x="1985" y="440"'></div>
+      <div class="Plitka" data='x="2083" y="440"'></div>
+
+      <div class="Plitka" data='x="221" y="524"'></div>
+      <div class="Plitka" data='x="319" y="524"'></div>
+      <div class="Plitka" data='x="417" y="524"'></div>
+      <div class="Plitka" data='x="515" y="524"'></div>
+      <div class="Plitka" data='x="613" y="524"'></div>
+      <div class="Plitka" data='x="711" y="524"'></div>
+      <div class="Plitka" data='x="809" y="524"'></div>
+      <div class="Plitka" data='x="907" y="524"'></div>
+      <div class="Plitka" data='x="1005" y="524"'></div>
+      <div class="Plitka" data='x="1103" y="524"'></div>
+      <div class="Plitka" data='x="1201" y="524"'></div>
+      <div class="Plitka" data='x="1299" y="524"'></div>
+      <div class="Plitka" data='x="1397" y="524"'></div>
+      <div class="Plitka" data='x="1495" y="524"'></div>
+      <div class="Plitka" data='x="1593" y="524"'></div>
+      <div class="Plitka" data='x="1691" y="524"'></div>
+      <div class="Plitka" data='x="1789" y="524"'></div>
+      <div class="Plitka" data='x="1887" y="524"'></div>
+      <div class="Plitka" data='x="1985" y="524"'></div>
+      <div class="Plitka" data='x="2083" y="524"'></div>
+
+      <div class="Plitka" data='x="221" y="608"'></div>
+      <div class="Plitka" data='x="319" y="608"'></div>
+      <div class="Plitka" data='x="417" y="608"'></div>
+      <div class="Plitka" data='x="515" y="608"'></div>
+      <div class="Plitka" data='x="613" y="608"'></div>
+      <div class="Plitka" data='x="711" y="608"'></div>
+      <div class="Plitka" data='x="809" y="608"'></div>
+      <div class="Plitka" data='x="907" y="608"'></div>
+      <div class="Plitka" data='x="1005" y="608"'></div>
+      <div class="Plitka" data='x="1103" y="608"'></div>
+      <div class="Plitka" data='x="1201" y="608"'></div>
+      <div class="Plitka" data='x="1299" y="608"'></div>
+      <div class="Plitka" data='x="1397" y="608"'></div>
+      <div class="Plitka" data='x="1495" y="608"'></div>
+      <div class="Plitka" data='x="1593" y="608"'></div>
+      <div class="Plitka" data='x="1691" y="608"'></div>
+      <div class="Plitka" data='x="1789" y="608"'></div>
+      <div class="Plitka" data='x="1887" y="608"'></div>
+      <div class="Plitka" data='x="1985" y="608"'></div>
+      <div class="Plitka" data='x="2083" y="608"'></div> -->
+    </div>
+    <div class="SloyCont">
+      <div class="ActiveSloy" data="1">1 слой</div>
+      <div data="2">2 слой</div>
+      <div data="3">3 слой</div>
+    </div>
+    <div class="buttons">
+      <button id="clear">Очистить поле</button>
+      <button id="Start">Start</button>
+    </div>
+
+    <div style="display: flex; gap: 20px; margin-bottom: 40px">
+      <div class="RandomCont">
+        Вывод плиток
+        <textarea rows="30" cols="30" id="vivod"> </textarea>
+      </div>
+      <div class="RandomCont">
+        Для рандома
+        <textarea id="randInput" rows="30" cols="30"> </textarea>
+        <button id="RandStart">Зарандомить</button>
+      </div>
+      <div class="RandomCont">
+        Вывод рандома
+        <textarea id="randOtput" rows="30" cols="30"> </textarea>
+      </div>
+      <div class="RandomCont">
+        Вывод спавна плиток
+        <textarea id="spawnOutput" rows="30" cols="30"> </textarea>
+      </div>
+    </div>
+
+    <script>
+      /*let x=221
+let y=188
+for(let j=0; j<6;j++){
+    for(let i=0; i<20;i++){
+        console.log(`<div class="Plitka" data='x="${x}" y="${y}"'></div>`)
+        x+=98
+    }
+    console.log('')
+    y+=84
+}*/
+
+      document.querySelector("#clear").addEventListener("click", () => {
+        document.querySelectorAll(".Plitka").forEach((e) => {
+          e.setAttribute("class", "Plitka");
+          e.innerHTML = "";
+        });
+      });
+
+      document.querySelector("#RandStart").addEventListener("click", () => {
+        const inpArr = randInput.value.match(/chip\d+/g);
+        let replacementStr = randInput.value.replace(/chip\d+/g, "@");
+        const pltLength = inpArr.length;
+        console.log(inpArr);
+        if (pltLength % 2 != 0) {
+          alert("Нечетное количество фишек");
+        } else {
+          const cel = parseInt(pltLength / 20);
+          const ost = pltLength % 20;
+          let outArr = [];
+          for (let i = 0; i < 20; i++) {
+            outArr.push(cel);
+          }
+          for (let i = 0; i < ost / 2; i++) {
+            outArr[i] += 2;
+          }
+
+          if (outArr[0] % 2 != 0) {
+            outArr.forEach((e, i) => {
+              outArr[i] -= 1;
+            });
+            for (let i = 0; i < 10; i++) {
+              outArr[i] += 2;
+            }
+          }
+
+          //Вывод спавна
+          let strSpawn = "<spawn_objects>";
+          outArr.forEach((e, i) => {
+            strSpawn += `\n\t<object>\n\t\t<name>${code.value}_chip${
+              i + 1
+            }</name>\n\t\t<count>${e - 1}</count>\n\t</object>`;
+          });
+          strSpawn += "\n</spawn_objects>";
+          spawnOutput.value = strSpawn;
+          //конец спавна
+
+          let counter = 0;
+          while (counter < pltLength) {
+            let numPl = getRandomInt(20);
+            if (outArr[numPl - 1] > 0) {
+              replacementStr = replacementStr.replace("@", "chip" + numPl);
+              counter++;
+              outArr[numPl - 1] -= 1;
+            }
+          }
+          randOtput.value = replacementStr;
+        }
+      });
+
+      let Interval;
+      let removeFlag = false;
+      document.querySelector(".Main").addEventListener("mousedown", () => {
+        Interval = setInterval(() => {
+          currPlitka = document.querySelector(".Plitka:hover");
+          try {
+            if (
+              currPlitka.innerHTML != "" &&
+              currPlitka.getAttribute("dis") != "true"
+            ) {
+              currPlitka.innerHTML = parseInt(currPlitka.innerHTML) + 1;
+              currPlitka.setAttribute("dis", "true");
+            } else if (currPlitka.innerHTML == "") {
+              currPlitka.setAttribute("class", "Plitka Active");
+              currPlitka.innerHTML = 1;
+              currPlitka.setAttribute("dis", "true");
+            }
+          } catch (e) {}
+        }, 10);
+      });
+      document.addEventListener("mouseup", () => {
+        clearInterval(Interval);
+        document.querySelectorAll("[dis]").forEach((e) => {
+          e.removeAttribute("dis");
+        });
+      });
+
+      window.addEventListener("keydown", (e) => {
+        if (e.key == "Delete") {
+          try {
+            document
+              .querySelector(".Plitka:hover")
+              .setAttribute("class", "Plitka");
+            document.querySelector(".Plitka:hover").innerHTML = "";
+          } catch (e) {}
+        }
+      });
+
+      let coordArr = [];
+      /*
+    document.querySelectorAll('.Plitka').forEach(e=>{
+        e.addEventListener('click',()=>{
+            if(e.getAttribute('class')=='Plitka'){
+                e.setAttribute('class','Plitka Active')  
+            }else{
+                e.setAttribute('class','Plitka') 
+            }
+            
+        })
+    })
+    */
+
+      document.querySelectorAll(".SloyCont div").forEach((e) => {
+        e.addEventListener("click", () => {
+          document.querySelector(".ActiveSloy").removeAttribute("class");
+          e.setAttribute("class", "ActiveSloy");
+        });
+      });
+
+      document.querySelector("#Start").addEventListener("click", () => {
+        let coordArr = [];
+        let dataRes;
+        let layer = 0;
+        let finalRes = "";
+        document.querySelectorAll(".Active").forEach((e) => {
+          if (
+            document.querySelector(".ActiveSloy").getAttribute("data") == "2"
+          ) {
+            const str = e.getAttribute("data");
+            const arr = str.split(" ");
+            dataRes =
+              arr[0].replace(/\d+/, parseInt(arr[0].match(/\d+/)) - 2) +
+              " " +
+              arr[1].replace(/\d+/, parseInt(arr[1].match(/\d+/)) - 4);
+          } else if (
+            document.querySelector(".ActiveSloy").getAttribute("data") == "3"
+          ) {
+            const str = e.getAttribute("data");
+            const arr = str.split(" ");
+            dataRes =
+              arr[0].replace(/\d+/, parseInt(arr[0].match(/\d+/)) - 4) +
+              " " +
+              arr[1].replace(/\d+/, parseInt(arr[1].match(/\d+/)) - 8);
+          } else {
+            dataRes = e.getAttribute("data");
+          }
+          const arrLayer = parseInt(e.innerHTML) - 1;
+          if (coordArr[arrLayer] == undefined) {
+            coordArr[arrLayer] = [];
+          }
+          coordArr[arrLayer].push(dataRes);
+        });
+        coordArr.forEach((e) => {
+          let res = "<param>\n\t<name>Level</name>\n\t<actions>";
+          e.forEach((i) => {
+            res += `\n\t\t<action>${code.value}_chip1</action>`;
+          });
+
+          res += "\n\t</actions>\n\t<points>";
+
+          e.forEach((i) => {
+            res += `\n\t\t<hge_vector ${i} />`;
+          });
+
+          res += "\n\t</points>\n</param>\n\n";
+          finalRes += res;
+        });
+
+        vivod.value = finalRes;
+      });
+
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * max) + 1;
+      }
+    </script>
+    <style>
+      .buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin: 40px 0px;
+      }
+
+      .buttons button {
+        width: 200px;
+        padding: 20px 0px;
+        cursor: pointer;
+      }
+
+      .RandomCont {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        gap: 10px;
+        margin-top: 50px;
+      }
+
+      .Main {
+        user-select: none;
+      }
+      .Main {
+        width: 1000px;
+        /* display: grid;*/
+        margin: auto;
+        display: flex;
+        /*grid-template-columns: repeat(20, 1fr);*/
+        margin-bottom: 50px;
+      }
+
+      .Row {
+        display: flex;
+        flex-direction: column;
+        margin-top: 25px;
+      }
+      .Row1 {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .Plitka {
+        width: 50px;
+        height: 50px;
+        background: #b1b0b0;
+        border: solid 1px #000;
+        cursor: pointer;
+        font-size: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .Plitka:hover {
+        opacity: 0.6;
+      }
+
+      .Active {
+        background: #b7a4ff;
+      }
+      .ActiveSloy {
+        background: #b7a4ff !important;
+      }
+
+      .SloyCont {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .SloyCont div {
+        font-size: 20px;
+        padding: 20px 50px;
+        background: #b1b0b0;
+        border: solid 1px #000;
+        cursor: pointer;
+      }
+
+      .SloyCont div:hover {
+        opacity: 0.6;
+      }
+    </style>
+  </body>
+</html>
