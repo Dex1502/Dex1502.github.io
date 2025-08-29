@@ -1,0 +1,204 @@
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+
+<body>
+    <params>
+        <div>Размер сетки <input type="text" placeholder="9" id="size"></div>
+        <div>Отступ <input type="text" value="93" id="margin"></div>
+        <div>X кружка в первой клетке <input type="text" id="xfirst"></div>
+        <div>Y кружка в первой клетке <input type="text" id="yfirst"></div>
+        <div>Количество кружков <input type="text" id="countcirc"></div>
+        <button>Старт</button>
+    </params>
+    <main>
+        <field>
+        </field>
+        <circles>
+        </circles>
+    </main>
+    <result>
+        <h2>Вывод</h2>
+        <textarea cols="40" rows="40"></textarea>
+        <button>Старт</button>
+    </result>
+</body>
+
+<script>
+    const colors=[
+    "#da9228",
+    "#29803c",
+    "#d32626",
+    "#0e0bb9",
+    "#9427d3",
+    "#ddee44",
+    "#f857c3",
+    "#81d85f",
+    "#5f8fd8",
+    "#5bdbec",
+    "#851f1f"]
+    
+    document.querySelector('params button').addEventListener('click',()=>{
+        let currentColor=0
+
+        const size=parseInt(document.querySelector('#size').value)
+        const margin=parseInt(document.querySelector('#margin').value)
+        const xfirst=parseInt(document.querySelector('#xfirst').value)
+        const yfirst=parseInt(document.querySelector('#yfirst').value)
+        const countcirc=parseInt(document.querySelector('#countcirc').value)
+
+        document.querySelector('field').setAttribute('style',`grid-template-columns:repeat(${size}, 90px);`)
+
+        let k=0
+        for(let i=0;i<size;i++){
+            for(let j=0;j<size;j++){
+                const cell=document.createElement('cell')
+                cell.setAttribute('cellid',k)
+                cell.setAttribute('x',xfirst+margin*j)
+                cell.setAttribute('y',yfirst+margin*i)
+                
+                document.querySelector('field').append(cell)
+                k++
+            }
+        }
+
+        document.querySelectorAll('cell').forEach(e=>{
+            e.addEventListener('click',()=>{
+                if(currentColor!=0){
+                    let flag=true
+                    let circarray=[]
+                    let circnum=1
+
+                    if(document.querySelector('cellcircle')!=null){
+                        document.querySelectorAll('cellcircle').forEach(r=>{
+                            circarray.push(r.getAttribute('circleid'))
+                        })
+                    }
+
+                    for(let i=1;i<=countcirc;i++){
+                        if(circarray.filter(f=>f==i).length==1 && currentColor==i){
+                            circnum=2
+                        }
+                        if(circarray.filter(f=>f==i).length==2 && currentColor==i){
+                            flag=false
+                        }
+                    }
+
+                    if(flag){
+                        const cellcircle=document.createElement('cellcircle')
+                        cellcircle.setAttribute('style',`background:${colors[currentColor-1]}`)
+                        cellcircle.setAttribute('circleid',currentColor)
+                        cellcircle.setAttribute('x', e.getAttribute('x'))
+                        cellcircle.setAttribute('y', e.getAttribute('y'))
+                        cellcircle.append(circnum)
+                        e.append(cellcircle)
+                    }
+                }
+            })
+        })
+
+
+
+
+
+        for(let i=0;i<countcirc;i++){
+            const circle=document.createElement('circle')
+            circle.setAttribute('circleid',i+1)
+            circle.setAttribute('style',`background:${colors[i]}`)
+            circle.append(i+1)
+            document.querySelector('circles').append(circle)
+        }
+
+        document.querySelectorAll('circle').forEach(e=>{
+            e.addEventListener('click',()=>{
+                if(currentColor!=0){
+                    document.querySelector('circle.active').removeAttribute('class')
+                }
+                e.setAttribute('class','active')
+                currentColor=parseInt(e.getAttribute('circleid'))
+            })
+        })
+    })
+
+    document.querySelector('result button').addEventListener('click',()=>{
+        let res=''
+        document.querySelectorAll('cellcircle').forEach(e=>{
+            if(e.innerHTML=='1'){
+                res+=`<object>\n\t<name>001_02_but_${e.getAttribute('circleid')}</name>\n\t<position x="${e.getAttribute('x')}" y="${e.getAttribute('y')}"/>\n</object>\n`
+            }else{
+                 res+=`<object>\n\t<name>001_02_but_${e.getAttribute('circleid')}_2</name>\n\t<position x="${e.getAttribute('x')}" y="${e.getAttribute('y')}"/>\n</object>\n`
+            }
+           
+        })
+        document.querySelector('textarea').value=res
+    })
+</script>
+<style>
+    main{
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+    }
+
+    button{
+        height: 30px;
+    }
+
+    params{
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        width: 200px;
+    }
+
+    result{
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        width: 300px;
+        margin-top: 50px;
+    }
+
+    field{
+        display: grid;
+        grid-auto-rows: 90px;
+        gap:2px;
+    }
+
+    cell{
+        background: rgb(197, 188, 175);
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    cell:hover{
+        background: rgb(139, 132, 121);
+    }
+
+    circles{
+        display: grid;
+        grid-template-columns: 70px 70px;
+        grid-auto-rows: 70px;
+        gap: 20px;
+    }
+
+    circle, cellcircle{
+        width: 70px;
+        height: 70px;
+        border-radius: 70px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+    }
+
+    circle:hover, circle.active{
+        opacity: 0.7;
+    }
+
+</style>
+</html>
