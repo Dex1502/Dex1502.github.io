@@ -4,8 +4,30 @@
 </head>
 
 <body>
+    <h1>Инструкция</h1>
+    <p>В поле "Токен" вводится номер mini.</p>
+    <p>В поле "Количество колонок" вводится число клеток идущих по ширине.</p>
+    <p>В поле "Количество строк" вводится число клеток идущих по высоте.</p>
+    <p>В поле "Отступ" вводится размер клетки + ширина границы.<br />
+    Сейчас везде клетка 90, а граница 3, сделал ввод на случай, если что-то изменится.</p>
+    <p>Чтобы узнать X и Y кружка в первой клетке, нужно из готовой расстановки отнять разницу между кружками. <br />
+    Например если у нас стоит кружок в клетке [2 3], то мы по X отнимаем 93, а по Y 93+93 и получим кружок в клетке [1 1]. <br />
+    Это сделано т.к. поле расположено не фиксировано и меняется в зависимости от этапа.</p>
+    <p>В поле "Количество кружков" вводится число кружков разного цвета (если в игре 2 красных, 2 зеленых и 2 жёлтых, мы вводим 3).</p>
+    <p>Нажимаем "Старт"</p>
+    <p>Появляется поле и кружки. Выбираем круг и расставляем в нужные места с помощью ЛКМ. Если поставили круг не в то место, то нужно переключиться на такой же цвет (если он не выбран) и кликнуть по ненужному кругу.</p>
+    <p>Чтобы расставить прохождение для скипа - нужно переключиться на нужный цвет и на клавишу "e" расставить кружки прохождения в нужные клетки.</p>
+    <h2>Важно!</h2>
+    <p>Прохождение расставлять обязательно именно в том порядке, в котором он пойдет на скипе. И вести их нужно от круга с цифрой 1 до круга с цифрой 2. Расставляем прохождение для одного цвета сразу, не переключаясь на другой.<br />
+    Если ошибся в расстановке прохождения и очень лень обновлять и всё переставлять, то нужно удалить все круги прохождения того цвета, которого ты ошибся (клавиша "e" по стоящему кругу прохождения), переключиться на любой другой цвет, переключиться обратно на нужный и выставить его заново.</p>
+    <p>После того как всё расставили, нажимаем "Старт" у обоих текстовых полей и получаем расстановку кругов для level и акшионы для скипа в game.</p>
+
+
+
     <params>
-        <div>Размер сетки <input type="text" placeholder="9" id="size"></div>
+        <div>Токен <input type="text" placeholder="001_02" id="token"></div>
+        <div>Количество колонок <input type="text" placeholder="9" id="sizex"></div>
+        <div>Количество строк <input type="text" placeholder="9" id="sizey"></div>
         <div>Отступ <input type="text" value="93" id="margin"></div>
         <div>X кружка в первой клетке <input type="text" id="xfirst"></div>
         <div>Y кружка в первой клетке <input type="text" id="yfirst"></div>
@@ -18,11 +40,18 @@
         <circles>
         </circles>
     </main>
-    <result>
-        <h2>Вывод</h2>
-        <textarea cols="40" rows="40"></textarea>
-        <button>Старт</button>
-    </result>
+    <vivod>
+        <result>
+            <h2>Вывод левела</h2>
+            <textarea cols="40" rows="40"></textarea>
+            <button>Старт</button>
+        </result>
+        <hint>
+            <h2>Вывод хинта</h2>
+            <textarea cols="40" rows="40"></textarea>
+            <button>Старт</button>
+        </hint>
+    </vivod>
 </body>
 
 <script>
@@ -41,18 +70,20 @@
     
     document.querySelector('params button').addEventListener('click',()=>{
         let currentColor=0
+        let currentHint=0
 
-        const size=parseInt(document.querySelector('#size').value)
+        const sizex=parseInt(document.querySelector('#sizex').value)
+        const sizey=parseInt(document.querySelector('#sizey').value)
         const margin=parseInt(document.querySelector('#margin').value)
         const xfirst=parseInt(document.querySelector('#xfirst').value)
         const yfirst=parseInt(document.querySelector('#yfirst').value)
         const countcirc=parseInt(document.querySelector('#countcirc').value)
 
-        document.querySelector('field').setAttribute('style',`grid-template-columns:repeat(${size}, 90px);`)
+        document.querySelector('field').setAttribute('style',`grid-template-columns:repeat(${sizex}, 90px);`)
 
         let k=0
-        for(let i=0;i<size;i++){
-            for(let j=0;j<size;j++){
+        for(let i=0;i<sizey;i++){
+            for(let j=0;j<sizex;j++){
                 const cell=document.createElement('cell')
                 cell.setAttribute('cellid',k)
                 cell.setAttribute('x',xfirst+margin*j)
@@ -67,37 +98,66 @@
             e.addEventListener('click',()=>{
                 if(currentColor!=0){
                     let flag=true
-                    let circarray=[]
                     let circnum=1
-
-                    if(document.querySelector('cellcircle')!=null){
-                        document.querySelectorAll('cellcircle').forEach(r=>{
-                            circarray.push(r.getAttribute('circleid'))
-                        })
-                    }
-
-                    for(let i=1;i<=countcirc;i++){
-                        if(circarray.filter(f=>f==i).length==1 && currentColor==i){
-                            circnum=2
+                    
+                    if(e.querySelector('cellcircle') != null && e.querySelector('cellcircle').getAttribute('circleid')==currentColor){
+                        e.querySelector('cellcircle').remove()
+                    }else{
+                        
+                        if(document.querySelector('cellcircle') != null){
+                            let circarray=[]
+                            document.querySelectorAll('cellcircle').forEach(e=>{
+                                circarray.push(e)
+                            })
+                            if(circarray.filter(f=>f.getAttribute('circleid')==currentColor).length==0){
+                                circnum=1
+                            }else if(circarray.filter(f=>f.getAttribute('circleid')==currentColor).length==1 && circarray.filter(f=>f.getAttribute('circleid')==currentColor)[0].innerHTML==1){
+                                circnum=2
+                            }else if(circarray.filter(f=>f.getAttribute('circleid')==currentColor).length==1){
+                                circnum=1
+                            }else{
+                                flag=false
+                            }
                         }
-                        if(circarray.filter(f=>f==i).length==2 && currentColor==i){
-                            flag=false
-                        }
-                    }
 
-                    if(flag){
-                        const cellcircle=document.createElement('cellcircle')
-                        cellcircle.setAttribute('style',`background:${colors[currentColor-1]}`)
-                        cellcircle.setAttribute('circleid',currentColor)
-                        cellcircle.setAttribute('x', e.getAttribute('x'))
-                        cellcircle.setAttribute('y', e.getAttribute('y'))
-                        cellcircle.append(circnum)
-                        e.append(cellcircle)
+                        if(flag){
+                            const cellcircle=document.createElement('cellcircle')
+                            cellcircle.setAttribute('style',`background:${colors[currentColor-1]}`)
+                            cellcircle.setAttribute('circleid',currentColor)
+                            cellcircle.setAttribute('x', e.getAttribute('x'))
+                            cellcircle.setAttribute('y', e.getAttribute('y'))
+                            cellcircle.append(circnum)
+                            e.append(cellcircle)
+                        }
                     }
                 }
             })
         })
 
+        window.addEventListener("keydown", k=>{
+            if(k.key=='e'){
+                try{
+                    if(currentColor!=0 && document.querySelector("cell:hover").querySelector('cellcircle') == null){
+                        if(document.querySelector("cell:hover").querySelector('hintcircle') != null){
+                            document.querySelector("cell:hover").querySelector('hintcircle').remove()
+                        }else{
+                            const hintcircle=document.createElement('hintcircle')
+                            hintcircle.setAttribute('style',`background:${colors[currentColor-1]}`)
+                            hintcircle.setAttribute('circleid',currentColor)
+                            hintcircle.setAttribute('hintid',currentHint)
+                            hintcircle.setAttribute('cellid',document.querySelector("cell:hover").getAttribute('cellid'))
+                            hintcircle.setAttribute('x', document.querySelector("cell:hover").getAttribute('x'))
+                            hintcircle.setAttribute('y', document.querySelector("cell:hover").getAttribute('y'))
+                            document.querySelector("cell:hover").append(hintcircle)
+                            currentHint++
+                        }
+                    }
+                }catch(e){
+
+
+                }
+            }
+        })
 
 
 
@@ -117,21 +177,46 @@
                 }
                 e.setAttribute('class','active')
                 currentColor=parseInt(e.getAttribute('circleid'))
+                currentHint=0
             })
         })
     })
 
     document.querySelector('result button').addEventListener('click',()=>{
         let res=''
+        const token = document.querySelector('#token').value
         document.querySelectorAll('cellcircle').forEach(e=>{
             if(e.innerHTML=='1'){
-                res+=`<object>\n\t<name>001_02_but_${e.getAttribute('circleid')}</name>\n\t<position x="${e.getAttribute('x')}" y="${e.getAttribute('y')}"/>\n</object>\n`
+                res+=`<object>\n\t<name>${token}_but_${e.getAttribute('circleid')}</name>\n\t<position x="${e.getAttribute('x')}" y="${e.getAttribute('y')}"/>\n</object>\n`
             }else{
-                 res+=`<object>\n\t<name>001_02_but_${e.getAttribute('circleid')}_2</name>\n\t<position x="${e.getAttribute('x')}" y="${e.getAttribute('y')}"/>\n</object>\n`
+                 res+=`<object>\n\t<name>${token}_but_${e.getAttribute('circleid')}_2</name>\n\t<position x="${e.getAttribute('x')}" y="${e.getAttribute('y')}"/>\n</object>\n`
             }
            
         })
-        document.querySelector('textarea').value=res
+        document.querySelector('result textarea').value=res
+    })
+
+    document.querySelector('hint button').addEventListener('click',()=>{
+        const countcirc=parseInt(document.querySelector('#countcirc').value)
+        const token = document.querySelector('#token').value
+        let res=''
+        let hintarray=[]
+        document.querySelectorAll('hintcircle').forEach(e=>{
+            hintarray.push(e)
+        })
+        console.log(hintarray)
+        console.log(countcirc)
+        for(let i=1;i<=countcirc;i++){
+            res+=`<action>${token}_but_${i}</action>\n`
+            for(let j=0;j<hintarray.filter(f=>f.getAttribute('circleid')==i).length;j++){
+                res+=`<action>${hintarray.filter(f=>f.getAttribute('hintid')==j && f.getAttribute('circleid')==i)[0].getAttribute('cellid')}</action>\n`
+            }
+            res+=`<action>${token}_but_${i}_2</action>\n`
+            if(i<countcirc){
+                res+='<action>next</action>\n\n'
+            }
+        }
+        document.querySelector('hint textarea').value=res
     })
 </script>
 <style>
@@ -152,7 +237,7 @@
         width: 200px;
     }
 
-    result{
+    result, hint{
         display: flex;
         flex-direction: column;
         gap:10px;
@@ -196,8 +281,23 @@
         font-size: 28px;
     }
 
+    hintcircle{
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     circle:hover, circle.active{
         opacity: 0.7;
+    }
+
+    vivod{
+        display: flex;
+        gap: 30px;
     }
 
 </style>
