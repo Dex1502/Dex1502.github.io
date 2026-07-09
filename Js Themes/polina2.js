@@ -27,7 +27,7 @@ const words=[
     ["Roast","[роуст]","Жарить","https://e3.edimdoma.ru/data/posts/0003/3847/33847-ed4_big_wide.jpg?1769419901"],
     ["Raw","[роу]","Сырой","https://img.freepik.com/premium-photo/raw-beef-steak-white-background-top-view-angle-generative-ai_516484-1219.jpg"],
     ["Edible","[эдибл]","Съедобный","https://avatars.mds.yandex.net/i?id=cb3c17d9eee27180d64d826c38ef18e1_l-7054524-images-thumbs&n=13"],
-    ["Poison","[пойзэн]","Яд","https://www.cdc.gov/chemical-threats-and-toxins-laboratory/media/images/2024/05/Toxins-Poison-Bottle-G.jpg"],
+    ["Poison","[пойзэн]","Яд","https://img.freepik.com/premium-vector/vector-chemical-flask12_733406-311.jpg?semt=ais_hybrid&w=740&q=80"],
     ["Danger","[дейнджер]","Опасность","https://img.freepik.com/free-vector/warning-sign-skull-yellow_78370-3696.jpg?semt=ais_incoming&w=740&q=80"],
     ["Threat","[трет]","Угроза","https://avatars.mds.yandex.net/i?id=589d3875be17dd5f711659306701f3f0_l-4576218-images-thumbs&n=13"],
     ["Attack","[этак]","Нападать","https://avatars.mds.yandex.net/i?id=fd8f0d648ff898e4527c7b62cdc3ad5e_l-9289753-images-thumbs&n=13"],
